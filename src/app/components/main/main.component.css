@@ -1,22 +1,29 @@
 .minha {
-    border: 3px solid black;
+  border: 3px solid black;
 }
 .mini {
-    max-width: 90px;
-    max-width: 90px;
+  max-width: 90px;
+  max-width: 90px;
 }
 
 .alinhamento-vertical {
-    position: absolute;
-
-    top: 50%;
-
-   
+  position: absolute;
+  top: 50%;
 }
 label {
-    color: white;
-    font-size: 1.2em;
+  color: white;
+  font-size: 1.2em;
 }
+.email {
+  max-width: 40px;
+  max-height: 40px;
+  
+}
+.pai {
+  display: flex;
+  align-items: center;
+}
+
 /* .rotate {
     -webkit-animation: rotate 2s normal linear infinite;
     animation: rotate 2s normal linear infinite;
