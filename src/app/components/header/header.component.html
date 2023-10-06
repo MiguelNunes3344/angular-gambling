@@ -13,7 +13,7 @@
       </div>
     </div>
     <button class="btn btn-primary" (click)="openModalDeposit()">Depositar</button>
-    <button class="btn btn-danger margin">Sacar</button>
+    <button class="btn btn-danger margin" (click)="openModalWithdraw()">Sacar</button>
     
     <div class="border border-light rounded p-1" id="saldo-box">
         <div>
@@ -21,8 +21,6 @@
             <strong style="color: white; font-size: 1.2em;" class="mx-3">Saldo</strong>
             
             <input type="text" class="form-control"  id="input-saldo" [value]="balance" >
-            
-            
         </div>
     </div>
   </nav>

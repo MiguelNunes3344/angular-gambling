@@ -2,8 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { SearchService } from 'src/app/services/search-service.service';
-import { Observable } from 'rxjs';
-import { clientModel } from 'src/app/client-model';
+import { ModalComponentWithdraw } from '../modal/modal-component-withdraw';
 
 @Component({
   selector: 'app-header',
@@ -16,13 +15,18 @@ export class HeaderComponent {
   balance:number = 0;
 
   constructor(private dialog: MatDialog, private searhService:SearchService) {
-    console.log(this.searhService.getBalance().subscribe())
     this.searhService.getBalance().subscribe((valor) => this.balance = valor);
   }
   openModalDeposit() {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '600px', // Ajuste o tamanho conforme necessário
       height: '600px',
+    });
+  }
+  openModalWithdraw() {
+    const dialogRef = this.dialog.open(ModalComponentWithdraw, {
+      width: '600px',
+      height: '600px'
     });
   }
   
