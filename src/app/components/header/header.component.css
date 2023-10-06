@@ -3,8 +3,17 @@ img {
     max-width: 100px;
 }
 
+#navbarNavAltMarkup {
+    margin-left: 1.50rem;
+}
+
+#saldo-box {
+    margin-right: 7.50rem;
+}
+
 #input-saldo {
     margin-left: 0.55rem;
+    margin-bottom: 0.55rem;
     width: 8.0rem;
     height: 1.50rem;
 }
