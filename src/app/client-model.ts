@@ -3,4 +3,5 @@ export class clientModel {
     name:string='';
     password:string='';
     email:string='';
+    balance:number=0;
 }

@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { SearchService } from 'src/app/services/search-service.service';
+import { Observable } from 'rxjs';
+import { clientModel } from 'src/app/client-model';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+@Injectable()
 export class HeaderComponent {
-  
-  constructor(private dialog: MatDialog) {
 
+  balance:number = 0;
+
+  constructor(private dialog: MatDialog, private searhService:SearchService) {
+    console.log(this.searhService.getBalance().subscribe())
+    this.searhService.getBalance().subscribe((valor) => this.balance = valor);
   }
   openModalDeposit() {
     const dialogRef = this.dialog.open(ModalComponent, {
@@ -18,6 +25,12 @@ export class HeaderComponent {
       height: '600px',
     });
   }
+  
+  getBalanceUser() {
+    return this.balance;
+  }
+    
+  
   
 
   

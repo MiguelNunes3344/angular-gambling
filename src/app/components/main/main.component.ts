@@ -1,4 +1,5 @@
 import { Component, ContentChild, ElementRef, ViewChild } from '@angular/core';
+import { SearchService } from 'src/app/services/search-service.service';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,10 @@ export class MainComponent {
   angulo:string= '0';
   color:string = '';
   @ViewChild('roullete')roullete!: HTMLElement;
+
+  constructor(searchService:SearchService) {
+    
+  }
 
   getStatusColor() {
     return this.color = 'green';
