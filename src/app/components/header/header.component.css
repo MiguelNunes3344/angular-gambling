@@ -2,3 +2,9 @@ img {
     max-height: 50px;
     max-width: 100px;
 }
+
+#input-saldo {
+    margin-left: 0.55rem;
+    width: 8.0rem;
+    height: 1.50rem;
+}
