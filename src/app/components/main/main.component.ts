@@ -1,20 +1,43 @@
-import { Component, ContentChild, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search-service.service';
+import { HttpClient} from '@angular/common/http'
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent {
-  angulo:string= '0';
-  color:string = '';
-  @ViewChild('roullete')roullete!: HTMLElement;
+export class MainComponent implements OnInit {
 
-  constructor(searchService:SearchService) {
-    
+
+
+  ngOnInit(): void {
+
+    setInterval(() => {
+      this.getHttpNumber();
+    },100000);
   }
 
+
+
+
+
+
+
+
+  angulo:string= '0';
+  color:string = '';
+  url:string = 'http://localhost:8080/number';
+  @ViewChild('roullete')roullete!: HTMLElement;
+
+  constructor(searchService:SearchService, private httpClient:HttpClient) {
+    
+  }
+  
+  getHttpNumber() {
+    return this.httpClient.get<string>(this.url).subscribe((valor) => this.angulo = valor);
+  }
+  
   getStatusColor() {
     return this.color = 'green';
   }
@@ -22,6 +45,7 @@ export class MainComponent {
     this.color = 'blue';
   }
   getAngulo(): string {
+    
     return this.angulo+'deg';
   }
   betBlack() {
@@ -33,6 +57,9 @@ export class MainComponent {
   betGreen() {
     
   }
+
+
+  
 
 
 }
