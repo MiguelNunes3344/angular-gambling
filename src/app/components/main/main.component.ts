@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
 
   
   color:string = 'green';
-  angulo:string= '213';
+  angulo:string= '0';
   url:string = 'http://localhost:8080/number';
   @ViewChild('roullete')roullete!: HTMLElement;
 
@@ -21,17 +21,28 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
 
     setInterval(() => {
+
       this.getHttpNumber();
-    },10000);
+
+    },8000);
   }
   getHttpNumber() {
-    return this.httpClient.get<string>(this.url).subscribe((valor) => this.angulo = valor);
+    this.httpClient.get<string>(this.url).subscribe((valor) => this.angulo = valor);
+    if (this.angulo.length <= 1) {
+      this.angulo + '000';
+
+    } else if (this.angulo.length <= 2) {
+      this.angulo + '00'
+    } else {
+      this.angulo + '0'
+    }
+    
   }
   
   
   getAngulo(): string {
     
-    return this.angulo+'deg';
+    return  this.angulo + '0'+'deg';
   }
   betBlack() {
     const number  = Number(this.angulo);
