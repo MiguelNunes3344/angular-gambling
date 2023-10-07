@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { clientModel } from '../client-model';
-import { Observable } from 'rxjs/internal/Observable';
+import { HeaderComponent } from '../components/header/header.component';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class SearchService {
   baseURL: string = "http://localhost:8080/balance";
   
-
+  
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -24,5 +26,7 @@ export class SearchService {
   getBalance() {
     return this.httpClient.get<number>(this.baseURL);
   }
- 
+
+    
+  
 }

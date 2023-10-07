@@ -24,7 +24,15 @@ export class MainComponent {
   getAngulo(): string {
     return this.angulo+'deg';
   }
+  betBlack() {
 
+  }
+  betRed() {
+    
+  }
+  betGreen() {
+    
+  }
 
 
 }

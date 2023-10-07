@@ -17,9 +17,10 @@ export class HeaderComponent {
   constructor(private dialog: MatDialog, private searhService:SearchService) {
     this.searhService.getBalance().subscribe((valor) => this.balance = valor);
   }
+
   openModalDeposit() {
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '600px', // Ajuste o tamanho conforme necessário
+      width: '600px', 
       height: '600px',
     });
   }
@@ -33,6 +34,10 @@ export class HeaderComponent {
   getBalanceUser() {
     return this.balance;
   }
+  setBalanceUser(balanceInput:number) {
+    this.balance += balanceInput;
+  }
+
     
   
   
