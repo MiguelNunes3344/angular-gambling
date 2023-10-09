@@ -35,15 +35,9 @@ export class HeaderComponent {
     return this.balance;
   }
   setBalanceUser(balanceInput:number) {
-    localStorage.setItem('betted',balanceInput.toString())
     this.balance += balanceInput;
   }
-
     
-  
-  
-
-  
 }
 
 

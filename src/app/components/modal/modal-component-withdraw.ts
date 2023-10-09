@@ -10,17 +10,13 @@ import { SearchService } from "src/app/services/search-service.service";
 
 export class ModalComponentWithdraw {
     url:string = "http://localhost:8080/withdraw"
-
     @ViewChild('inputBalance') inputBalance:ElementRef;
-
 
     constructor(private httpClient:HttpClient, element:ElementRef, private searchService:SearchService) {
         this.inputBalance = element;
-
     }
 
     withdrawBalance() {
-        
         this.searchService.getBalance().subscribe((valor) => localStorage.setItem("balance",valor.toString()))
         var balance = localStorage.getItem("balance");
         if (this.inputBalance.nativeElement.value > Number(balance)) {
@@ -29,7 +25,5 @@ export class ModalComponentWithdraw {
             const body = {number: this.inputBalance.nativeElement.value};
             this.httpClient.post(this.url,body).subscribe();
         }
-
-        
     }
 }

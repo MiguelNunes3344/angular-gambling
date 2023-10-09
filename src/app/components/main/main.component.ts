@@ -142,4 +142,26 @@ export class MainComponent implements OnInit {
       }
     },500)
   }
+  addOne() {
+    this.inputElement.nativeElement.value = Number(this.inputElement.nativeElement.value)  + 1;  
+  }
+  addTen() {
+    this.inputElement.nativeElement.value = Number(this.inputElement.nativeElement.value)  + 10;
+  }
+  addOneHundred() {
+    this.inputElement.nativeElement.value = Number(this.inputElement.nativeElement.value)  + 100;
+  }
+  addOneThousand() {
+    this.inputElement.nativeElement.value = Number(this.inputElement.nativeElement.value)  + 1000;
+  }
+  max() {
+    this.searchService.getBalance().subscribe((valor) => localStorage.setItem('betted',valor.toString()));
+    var number = localStorage.getItem("betted");
+    this.inputElement.nativeElement.value = Number(this.inputElement.nativeElement.value)  + Number(number);
+  }
+  clearInput() {
+    this.inputElement.nativeElement.value = "";
+  }
+  
+
 }

@@ -21,3 +21,15 @@ img {
     margin-left: 1.5rem;
     margin-right:  5rem;
 }
+#logo {
+    margin-left: 5rem;
+    margin-right: 1rem;
+}
+.imglogo {
+    height: 90px;
+    max-height: 180px;
+}
+.header-component {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgb(39, 0, 0)70%,rgb(39, 0, 0) 81%, rgb(39, 0, 0) 100%);
+}

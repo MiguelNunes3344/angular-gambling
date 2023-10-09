@@ -1,5 +1,5 @@
 .minha {
-  border: 3px solid black;
+  border: 3px solid rgb(41, 41, 41);
   min-height: 550px;
 }
 .mini {
@@ -43,15 +43,30 @@ label {
   width: 800px;
   height: 800px;
 }
-
+#balance {
+  margin-left: 9px;
+}
 .rotate {
   animation: rotate 4s linear infinite;
   transition: transform 4s ease-in-out;
 }
-
+.mid-component {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgba(37,0,0,1) 81%, rgb(39, 0, 0) 100%);
+  background-position: center -80px;
+}
+.left-component {
+  background-color: rgba(0,0,0,1);
+}
+.right-component {
+  background-color:rgb(39, 0, 0);
+}
 .rotate-infinite {
     -webkit-animation: rotate 5s normal linear;
     animation: rotate 2s normal linear;
+}
+.no-padding {
+  padding: 0px;
 }
 @keyframes rotate {
     0% {
