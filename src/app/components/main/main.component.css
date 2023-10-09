@@ -46,7 +46,7 @@ label {
 
 .rotate {
   animation: rotate 4s linear infinite;
-  transition: transform 6s ease-in-out;
+  transition: transform 4s ease-in-out;
 }
 
 .rotate-infinite {

@@ -11,6 +11,8 @@ import { HeaderComponent } from '../components/header/header.component';
 @Injectable()
 export class SearchService {
   baseURL: string = "http://localhost:8080/balance";
+  baseUrlNumber: string = "http://localhost:8080/number";
+  baseUrlWithdraw: string = "http://localhost:8080/withdraw";
   
   
   constructor(private httpClient: HttpClient) { 
@@ -25,6 +27,13 @@ export class SearchService {
   }
   getBalance() {
     return this.httpClient.get<number>(this.baseURL);
+  }
+  getNumberColor() {
+    return this.httpClient.get<string[]>(this.baseUrlNumber);
+  }
+  removeBalance(withdrawValue:number) {
+    const body= {'number':withdrawValue}
+    return this.httpClient.post(this.baseUrlWithdraw,body).subscribe();
   }
 
     

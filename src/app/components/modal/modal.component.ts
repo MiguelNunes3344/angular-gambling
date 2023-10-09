@@ -20,6 +20,8 @@ export class ModalComponent {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
+    
+
     const quotes = this.balanceInput.nativeElement.value;
     const body = { 'number':quotes };
     this.httpClient.post(this.url,body,{headers}).subscribe();

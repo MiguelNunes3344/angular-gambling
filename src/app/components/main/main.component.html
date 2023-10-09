@@ -38,9 +38,9 @@
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-around mt-2 mb-5">
-                    <button class="btn btn-dark col-4 p-4 " (click)="betBlack()">Preto</button>
-                    <button class="btn btn-success col-4 p-4 mx-2" (click)="betGreen()">Verde</button>
-                    <button class="btn btn-danger col-4 p-4" (click)="betRed()">Vermelho</button>
+                    <button class="btn btn-dark col-4 p-4 " (click)="betBlack()" [disabled]="disable">Preto</button>
+                    <button class="btn btn-success col-4 p-4 mx-2" (click)="betGreen()" [disabled]="disable">Verde</button>
+                    <button class="btn btn-danger col-4 p-4" (click)="betRed()" [disabled]="disable">Vermelho</button>
                 </div>
             </div>
 
@@ -52,8 +52,8 @@
         <div class="container h-100 bg-dark">
             <div class="d-flex justify-content-center">
                 <div class="alinhamento-vertical">
-                    <label for="balance">Valor da Aposta</label>
-                    <input type="text" class="form-control input-saldo" id="balance">
+                    <label for="balance" #valueBet>Valor da Aposta</label>
+                    <input type="text" class="form-control input-saldo" id="balance" #valorDaAposta>
                     <div class="row">
                         
                         <div class="mt-3">
