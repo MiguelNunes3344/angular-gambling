@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { HttpClient} from "@angular/common/http"
+import { SearchService } from "src/app/services/search-service.service";
 @Component({
     selector: 'app-modal-component-withdraw',
     templateUrl: './modal.component.withdraw.html',
@@ -13,13 +14,22 @@ export class ModalComponentWithdraw {
     @ViewChild('inputBalance') inputBalance:ElementRef;
 
 
-    constructor(private httpClient:HttpClient, element:ElementRef) {
+    constructor(private httpClient:HttpClient, element:ElementRef, private searchService:SearchService) {
         this.inputBalance = element;
 
     }
 
     withdrawBalance() {
-        const body = {number: this.inputBalance.nativeElement.value};
-        this.httpClient.post(this.url,body).subscribe();
+        
+        this.searchService.getBalance().subscribe((valor) => localStorage.setItem("balance",valor.toString()))
+        var balance = localStorage.getItem("balance");
+        if (this.inputBalance.nativeElement.value > Number(balance)) {
+            alert("Insufficient Balance")
+        } else {
+            const body = {number: this.inputBalance.nativeElement.value};
+            this.httpClient.post(this.url,body).subscribe();
+        }
+
+        
     }
 }
