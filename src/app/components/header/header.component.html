@@ -8,19 +8,19 @@
     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link active m-2" href="#">Home</a>
-        <a class="nav-item nav-link m-2" href="#">Roullete</a>
+        <a class="nav-item nav-link m-2" href="#">Roleta</a>
         <a class="nav-item nav-link m-2" href="#">Crash</a>
       </div>
     </div>
     <button class="btn btn-primary opacity-80" (click)="openModalDeposit()">Depositar</button>
     <button class="btn btn-danger margin opacity-80" (click)="openModalWithdraw()">Sacar</button>
     
-    <div class="border border-dark rounded p-1 bg-dark opacity-70" id="saldo-box">
+    <div class="border border-dark rounded p-1 balance-user" id="saldo-box">
         <div>
             <img src="../../../assets/seta-dinheiro.png" alt="" class="p-2 mx-3">
             <strong style="color: white; font-size: 1.2em;" class="mx-3">Saldo</strong>
             
-            <input type="text" class="form-control"  id="input-saldo" [value]="balance" >
+            <input type="text" class="form-control border-circle"  id="input-saldo" [value]="balance" >
         </div>
     </div>
   </nav>

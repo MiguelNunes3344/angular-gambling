@@ -2,15 +2,15 @@ img {
     max-height: 50px;
     max-width: 100px;
 }
-
 #navbarNavAltMarkup {
     margin-left: 1.50rem;
 }
-
 #saldo-box {
     margin-right: 7.50rem;
 }
-
+.border-circle {
+    border-radius: 50px;
+}
 #input-saldo {
     margin-left: 0.55rem;
     margin-bottom: 0.55rem;
@@ -26,10 +26,14 @@ img {
     margin-right: 1rem;
 }
 .imglogo {
-    height: 90px;
+    height: 70px;
     max-height: 180px;
 }
 .header-component {
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgb(39, 0, 0)70%,rgb(39, 0, 0) 81%, rgb(39, 0, 0) 100%);
+    background-color: rgb(39, 58, 83);
+}
+.balance-user {
+    background-color: rgba(255, 255, 255, 0.05);
+    
+    
 }

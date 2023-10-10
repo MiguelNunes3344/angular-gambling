@@ -1,46 +1,59 @@
 <div class="row" >
-    <div class="col border-dark p-2 minha vh-90 position-relative left-component">
-        <div class="row child">
-            <div class="col">
-                <div class="container pai col border border-primary width-big p-2">
-                    <div class="input-group-prepend col-1">
-                        <img src="../../../assets/email.png" alt="" class="email">
-                    </div>
-                    <div class="container pai col-7">
-                        <input type="text" class="form-control" placeholder="Escreva sua mensagem" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                    </div>
-                    <div class="container pai">
-                        <button class="btn btn-primary col-10">Enviar</button>
+    <div class="col p-2 left-chat vh-90 position-relative left-component">
+        <div class="container chat position-relative padding-chat overflow-scroll">
+            <div class="container chat-top">
+                <div class="col box-text"  *ngFor="let x of chatting"> 
+                    <img src="../../../assets/user-photo.png" alt="user's photo" class="mini-user"> 
+                   
+                    <span class="font">{{x.name}}</span>
+                    <div class="container box-text">
+                        <p class="box-text">
+                            {{x.text}} 
+                        </p>
                     </div>
                     
+                    
                 </div>
-                
-                
             </div>
-            
         </div>
-               
-
+        
+        <div class="container" >
+            <div class="central-p col width-big child" id="lighten">
+                <div class="input-group-prepend col-1">
+                </div>
+                <div class="container central-p col-12">
+                    <input type="text" class="form-control borda" placeholder="Escreva sua mensagem" aria-label="Username"
+                        aria-describedby="basic-addon1" #messageUser>
+                </div>
+                <div class="container central-p col-3">
+                    <button class="btn btn-primary col-10 borda " (click)="inviteMessage()" style="border-radius: 50px"><img src="../../../assets/arrow-chat.png" alt="" id="mini-arrow"></button>
+                </div>  
+            </div>
+        </div>
+        
     </div>
-
     <div class="col-6 mid-component">
         <div class="d-flex justify-content-center">
             <img src="../../../assets/roleta-otavio.png" alt="" id="roleta" class="imgroulette rotate-infinite rotate"
                 [ngStyle]="{'transform':'rotate( '+ getAngulo() +' )'}">
-
         </div>
         <div class="row">
-            <div class="d-flex justify-content-center">
-                <img src="../../../assets/seta-otavio.png" alt="" class="mini">
+            <div class="d-flex justify-content-center mb-5">
+                <img src="../../../assets/arrow.png" alt="" class="mini">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-around mt-2 mb-5">
-                    <button class="btn btn-dark col-4 p-4 " (click)="betBlack()" [disabled]="disable">Preto</button>
-                    <button class="btn btn-success col-4 p-4 mx-2" (click)="betGreen()" [disabled]="disable">Verde</button>
-                    <button class="btn btn-danger col-4 p-4" (click)="betRed()" [disabled]="disable">Vermelho</button>
+                    <button class="btn btn-dark col-3 p-4 borda" (click)="betBlack()" [disabled]="disable">
+                        <span class="font-button">Preto</span>
+                    </button>
+                    <button class="btn btn-success col-3 p-4 mx-2 borda" (click)="betGreen()" [disabled]="disable" >
+                        <span class="font-button">Verde</span>
+                    </button>
+                    <button class="btn btn-danger col-3 p-4 borda" (click)="betRed()" [disabled]="disable">
+                        <span class="font-button">Vermelho </span>
+                    </button>
                 </div>
             </div>
 
@@ -49,27 +62,26 @@
     </div>
     <div class="col no-padding">
 
-        <div class="container h-100 right-component">
+        <div class="container h-100 right-component position-relative">
             <div class="d-flex justify-content-center">
-                <div class="alinhamento-vertical">
-                    <label for="balance" #valueBet id="balance">Valor da Aposta</label>
-                    <input type="text" class="form-control input-saldo" id="balance" #valorDaAposta placeholder="$0.00">
+                <div class="alinhamento-vertical bet-group" >
+                    <label for="balance" #valueBet id="balance" class="font-button">Valor da Aposta</label>
+                    <input type="text" class="form-control input-balance borda col-2" id="balance" #valorDaAposta placeholder="$0.00">
                     <div class="row">
                         
-                        <div class="">
-                            <button class="btn btn-secondary .bg-info.bg-gradient col-4 m-2" (click)="addOne()">1</button>
-                            <button class="btn btn-secondary col-4 m-2" (click)="addTen()">10</button>
+                        <div class="container">
+                            <button class="btn btn-secondary .bg-info.bg-gradient col-4 m-2 borda font-button" (click)="addOne()">1</button>
+                            <button class="btn btn-secondary col-4 m-2 borda font-button" (click)="addTen()">10</button>
                         </div>
                         <div>
-                            <button class="btn btn-secondary col-4 m-2" (click)="addOneHundred()">100</button>
-                            <button class="btn btn-secondary col-4 m-2" (click)="addOneThousand()">1000</button>
+                            <button class="btn btn-secondary col-4 m-2 borda font-button" (click)="addOneHundred()">100</button>
+                            <button class="btn btn-secondary col-4 m-2 borda font-button" (click)="addOneThousand()">1000</button>
 
                         </div>
                         <div>
-                            <button class="btn btn-warning col-4 m-2" (click)="clearInput()">Limpar</button>
-                            <button class="btn btn-light col-4 m-2" (click)="max()">Max</button>
+                            <button class="btn btn-warning col-4 m-2 borda font-button" (click)="clearInput()">Limpar</button>
+                            <button class="btn btn-light col-4 m-2 borda font-button" (click)="max()">Max</button>
                         </div>
-                        
                         
                                       
                     </div>
