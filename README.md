@@ -27,7 +27,7 @@ Este projeto contou com a contribuição de dois colaboradores:
 
 - **Jodecir Neto:** Colaborador que contribuiu para o desenvolvimento do projeto.
 
-- **Otavio Régis:** Designer de artes responsável pela criação do design e aparência do site.
+- **Otávio Régis:** Designer de artes responsável pela criação do design e aparência do site.
 
 ## Como Executar
 
