@@ -25,9 +25,9 @@ Este projeto contou com a contribuição de dois colaboradores:
 
 - **Miguel Nunes:** Desenvolvedor do projeto, responsável pela implementação do frontend e integração com a API.
 
-- **Jodecir:** Colaborador que contribuiu para o desenvolvimento do projeto.
+- **Jodecir Neto:** Colaborador que contribuiu para o desenvolvimento do projeto.
 
-- **Otavio:** Designer de artes responsável pela criação do design e aparência do site.
+- **Otavio Régis:** Designer de artes responsável pela criação do design e aparência do site.
 
 ## Como Executar
 
