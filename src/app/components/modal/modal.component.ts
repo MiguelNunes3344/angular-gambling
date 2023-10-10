@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class ModalComponent {
   
   @ViewChild('balanceInput') balanceInput:ElementRef;
-  url:string= 'http://localhost:8080/update'
+  private url = environment.urlUpdate;
  
   constructor(private httpClient: HttpClient, element:ElementRef) {
     this.balanceInput = element;

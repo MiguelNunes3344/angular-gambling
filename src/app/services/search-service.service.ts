@@ -13,6 +13,7 @@ export class SearchService {
   baseURL: string = "http://localhost:8080/balance";
   baseUrlNumber: string = "http://localhost:8080/number";
   baseUrlWithdraw: string = "http://localhost:8080/withdraw";
+  baseUrlUpdate:string = "http://localhost:8080/update";
   
   
   constructor(private httpClient: HttpClient) { 
@@ -34,6 +35,10 @@ export class SearchService {
   removeBalance(withdrawValue:number) {
     const body= {'number':withdrawValue}
     return this.httpClient.post(this.baseUrlWithdraw,body).subscribe();
+  }
+  updateBalance(number:number) {
+    const body = {'number': number}
+    return this.httpClient.post(this.baseUrlUpdate,body).subscribe();
   }
 
     

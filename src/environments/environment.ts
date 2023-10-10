@@ -1,3 +1,5 @@
 export const environment = {
-    api: '',
+    urlBalance: '',
+    urlWithdraw:'',
+    urlUpdate:''
 };

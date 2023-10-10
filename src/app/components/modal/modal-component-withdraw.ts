@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { HttpClient} from "@angular/common/http"
 import { SearchService } from "src/app/services/search-service.service";
+import { environment } from "src/environments/environment.development";
 @Component({
     selector: 'app-modal-component-withdraw',
     templateUrl: './modal.component.withdraw.html',
@@ -9,7 +10,7 @@ import { SearchService } from "src/app/services/search-service.service";
 })
 
 export class ModalComponentWithdraw {
-    url:string = "http://localhost:8080/withdraw"
+    private url = environment.urlWithdraw;
     @ViewChild('inputBalance') inputBalance:ElementRef;
 
     constructor(private httpClient:HttpClient, element:ElementRef, private searchService:SearchService) {
@@ -18,12 +19,19 @@ export class ModalComponentWithdraw {
 
     withdrawBalance() {
         this.searchService.getBalance().subscribe((valor) => localStorage.setItem("balance",valor.toString()))
-        var balance = localStorage.getItem("balance");
-        if (this.inputBalance.nativeElement.value > Number(balance)) {
-            alert("Insufficient Balance")
-        } else {
-            const body = {number: this.inputBalance.nativeElement.value};
-            this.httpClient.post(this.url,body).subscribe();
-        }
+        
+        console.log("Valor da balança "+this.inputBalance.nativeElement.value);
+        
+        setTimeout(()=> {
+            var balance = localStorage.getItem('balance');
+            if (this.inputBalance.nativeElement.value <= Number(balance)) {
+                const body = {number: this.inputBalance.nativeElement.value};
+                this.httpClient.post(this.url,body).subscribe();
+            } else {
+                alert("Sem saldo")
+                
+            }
+        },1000)
+        
     }
 }

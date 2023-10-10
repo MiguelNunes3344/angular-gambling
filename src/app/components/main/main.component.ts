@@ -3,6 +3,7 @@ import { SearchService } from 'src/app/services/search-service.service';
 import { HttpClient } from '@angular/common/http'
 import { Observable, first, take } from 'rxjs';
 import { chatModel } from 'src/app/chat.model';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-main',
@@ -14,8 +15,7 @@ export class MainComponent implements OnInit {
 
   colorRoulete: string = '';
   angulo: string = '360';
-  url: string = 'http://localhost:8080/number';
-  urlBalance: string = 'http://localhost:8080/update';
+  private urlBalance = environment.urlBalance;
   @ViewChild('valorDaAposta') inputElement: ElementRef;
   @ViewChild('messageUser') inputMessage: ElementRef;
   anguloColor = new Observable<string[]>();
