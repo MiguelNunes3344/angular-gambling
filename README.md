@@ -1,27 +1,42 @@
-# Gambling
+# Projeto de Site de Apostas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+Este é um projeto de site de apostas desenvolvido utilizando Angular e TypeScript no frontend. O objetivo principal deste projeto é oferecer uma plataforma de apostas online que apresenta uma roleta, métodos básicos de depósito e saque para os usuários.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Frontend:**
+  - Angular
+  - TypeScript
 
-## Code scaffolding
+- **Backend:**
+  - [API Spring Boot](https://github.com/MiguelNunes3344/backend-gambling) desenvolvida em Java 17
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades Principais
 
-## Build
+1. **Roleta:** O projeto inclui uma roleta onde os usuários podem fazer suas apostas e testar sua sorte.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Depósito e Saque:** Oferece métodos simples de depósito e saque para que os usuários possam gerenciar seus fundos na plataforma.
 
-## Running unit tests
+3. **Integração com API:** O projeto consome uma API própria localizada em [https://github.com/MiguelNunes3344/backend-gambling](https://github.com/MiguelNunes3344/backend-gambling) que foi desenvolvida usando Spring Boot e Java 17.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Colaboradores
 
-## Running end-to-end tests
+Este projeto contou com a contribuição de dois colaboradores:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Miguel Nunes:** Desenvolvedor do projeto, responsável pela implementação do frontend e integração com a API.
 
-## Further help
+- **Jodecir:** Colaborador que contribuiu para o desenvolvimento do projeto.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Otavio:** Designer de artes responsável pela criação do design e aparência do site.
+
+## Como Executar
+
+Para executar o projeto, siga as instruções no README do repositório [backend-gambling](https://github.com/MiguelNunes3344/backend-gambling) para configurar e iniciar o servidor da API. Em seguida, siga estas etapas:
+
+1. Clone este repositório.
+2. Navegue até o diretório do projeto.
+3. Execute `npm install` para instalar as dependências do frontend.
+4. Execute `ng serve` para iniciar o servidor de desenvolvimento.
+5. Acesse o site em `http://localhost:4200/` em seu navegador.
+
+Lembre-se de que este é um projeto básico e pode ser estendido com mais recursos e funcionalidades no futuro.
